@@ -1,6 +1,8 @@
 import graphene
 
-class Query(graphene.ObjectType):
-    hello = graphene.String(default_value="Hi!")
+import myauth.schema
+
+class Query(myauth.schema.Query, graphene.ObjectType):
+    pass
 
 schema = graphene.Schema(query=Query)

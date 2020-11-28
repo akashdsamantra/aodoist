@@ -1,0 +1,13 @@
+{
+  "name": "aodoist",
+  "private": true,
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:akashdsamantra/aodoist.git",
+  "author": "Akashdeep Samantra <akash.samantra19@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "packages/web-client/*"
+  ]
+}

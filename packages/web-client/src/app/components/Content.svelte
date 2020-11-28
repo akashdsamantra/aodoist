@@ -1,12 +1,12 @@
 <script>
   import { onMount, getContext } from "svelte";
-  import Surprise from "./Surprise.svelte";
+  import Template from "./Template.svelte";
 
   const { open } = getContext("simple-modal");
 
-  const showSurprise = () => {
-    open(Surprise, { message: "It's a modal!" });
-  };
-</script>
+  export let message;
 
-<p><button on:click={showSurprise}>Show me a surprise!</button></p>
+  onMount(() => {
+    open(Template, { message });
+  });
+</script>

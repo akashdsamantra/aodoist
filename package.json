@@ -2,7 +2,9 @@
   "name": "aodoist",
   "private": true,
   "version": "0.0.1",
-  "main": "index.js",
+  "scripts": {
+    "start": "yarn workspace web-client dev"
+  },
   "repository": "git@github.com:akashdsamantra/aodoist.git",
   "author": "Akashdeep Samantra <akash.samantra19@gmail.com>",
   "license": "MIT",

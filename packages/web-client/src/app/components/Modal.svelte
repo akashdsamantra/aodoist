@@ -1,16 +1,21 @@
 <script>
-  import { onMount, getContext } from "svelte";
   import Modal from "svelte-simple-modal";
+  import Content from "./Content.svelte";
 
-  onMount(() => {});
+  export let isOpen;
+  export let message;
 
-  const { open } = getContext("simple-modal");
-
-  const showSurprise = () => {
-    open(Surprise, { message: "It's a modal!" });
-  };
+  const styleBg = { background: "lightgray" };
+  const styleContent = { background: "lightgray", textAlign: "center" };
 </script>
 
-<Modal>
-  <p><button on:click={showSurprise}>Show me a surprise!</button></p>
-</Modal>
+{#if isOpen}
+  <Modal
+    {styleBg}
+    {styleContent}
+    closeButton={false}
+    closeOnEsc={false}
+    closeOnOuterClick={false}>
+    <Content {message} />
+  </Modal>
+{/if}

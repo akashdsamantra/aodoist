@@ -1,3 +1,7 @@
-<div>
-  <p>Page Loader</p>
-</div>
+<script lang="ts">
+  import Modal from "./Modal.svelte";
+</script>
+
+<main>
+  <Modal isOpen message="Loading..." />
+</main>

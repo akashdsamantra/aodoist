@@ -1,9 +1,9 @@
 <script>
-  import PageLoader from "./components/PageLoader.svelte";
+    import PageLoader from "./components/PageLoader.svelte";
 
-  export const isPageLoading = false;
+    export const isPageLoading = false;
 </script>
 
 <main>
-  <PageLoader loading={isPageLoading} />
+    <PageLoader loading={isPageLoading} />
 </main>

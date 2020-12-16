@@ -2,15 +2,18 @@
   "name": "web-client",
   "version": "1.0.0",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "watch:css": "postcss public/tailwind.css -o public/index.css -w",
+    "build:css": "cross-env NODE_ENV=production postcss public/tailwind.css -o public/index.css",
+    "build": "yarn run build:tailwind && rollup -c",
     "start": "sirv public",
-    "validate": "svelte-check"
+    "serve": "serve public -p 80",
+    "dev": "concurrently \"rollup -c -w\" \"yarn watch:css\""
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-typescript": "^6.0.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
     "@tsconfig/svelte": "^1.0.0",
     "rollup": "^2.3.4",
     "rollup-plugin-livereload": "^2.0.0",
@@ -20,9 +23,12 @@
     "svelte-check": "^1.0.0",
     "svelte-preprocess": "^4.0.0",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.3",
+    "concurrently": "^5.3.0"
   },
   "dependencies": {
+    "postcss": "^7.0.35",
+    "postcss-cli": "^7.1.2",
     "sirv-cli": "^1.0.0",
     "svelte-simple-modal": "^0.6.1"
   }

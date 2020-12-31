@@ -8,8 +8,7 @@
   "repository": "git@github.com:akashdsamantra/aodoist.git",
   "author": "Akashdeep Samantra <akash.samantra19@gmail.com>",
   "license": "MIT",
-  "workspaces": [
-    "packages/*",
-    "packages/web-client/*"
-  ]
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
 }
